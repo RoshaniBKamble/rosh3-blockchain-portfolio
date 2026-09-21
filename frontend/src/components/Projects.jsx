@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, FolderGit2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ExternalLink, FolderGit2 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Reveal } from "@/components/Reveal";
 import { projects } from "@/data/projects";
@@ -15,9 +15,7 @@ const ProjectCard = ({ project, flip }) => (
   <Reveal>
     <article
       data-testid={`project-card-${project.slug}`}
-      className={`group glass relative grid gap-0 overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/50 hover:shadow-[0_0_40px_rgba(139,92,246,0.14)] lg:grid-cols-2 ${
-        flip ? "" : ""
-      }`}
+      className="group glass relative grid gap-0 overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/50 hover:shadow-[0_0_40px_rgba(139,92,246,0.14)] lg:grid-cols-2"
     >
       <div className={`relative p-7 sm:p-10 ${flip ? "lg:order-2" : ""}`}>
         <span
@@ -66,14 +64,39 @@ const ProjectCard = ({ project, flip }) => (
               VIEW CASE STUDY
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
             </Link>
-            <span
-              data-testid={`project-github-soon-${project.slug}`}
-              className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-line/70 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-600"
-              title="Repository link will be published soon"
-            >
-              <FolderGit2 className="h-3.5 w-3.5" />
-              GITHUB — COMING SOON
-            </span>
+            {project.github ? (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid={`project-github-link-${project.slug}`}
+                className="inline-flex items-center gap-2 rounded-md border border-line bg-obsidian/60 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-300 transition-all duration-300 hover:border-cyan-500/50 hover:text-cyan-300"
+              >
+                <FolderGit2 className="h-3.5 w-3.5" />
+                GITHUB
+              </a>
+            ) : (
+              <span
+                data-testid={`project-github-soon-${project.slug}`}
+                className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-line/70 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-600"
+                title="Repository link will be published soon"
+              >
+                <FolderGit2 className="h-3.5 w-3.5" />
+                GITHUB — COMING SOON
+              </span>
+            )}
+            {project.demo ? (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid={`project-demo-link-${project.slug}`}
+                className="inline-flex items-center gap-2 rounded-md border border-line bg-obsidian/60 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-emerald-300 transition-all duration-300 hover:border-emerald-500/50"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                LIVE DEMO
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

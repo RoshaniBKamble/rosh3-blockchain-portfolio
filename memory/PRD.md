@@ -36,6 +36,7 @@ Build a premium, production-quality Web3/Blockchain developer portfolio for **Ro
 - Desktop hero/mid/projects/contact screenshots, case-study page, mobile 390px (no horizontal overflow, drawer works), zero app console errors
 
 ## Backlog
-- P0: Add real per-project GitHub repo URLs + contract addresses/explorer links when deployed (swap "COMING SOON" chips)
-- P1: Live demos for ChainEscrow / VerifiChain after Sepolia deployment
-- P2: Blog/writing section on Web3 security learnings
+- P0 (Deferred until repositories are ready): Replace "COMING SOON" buttons with real GitHub URLs for ChainSentinel, ChainEscrow, LendGuard, VerifiChain
+- P1 (Deferred until testnet deployments): Add real Sepolia contract addresses & block-explorer links to project case studies
+- P1 (Deferred): Live demos for ChainEscrow & VerifiChain after verified deployment
+- P2 (Deferred): Security Notes Blog on smart contract vulnerabilities

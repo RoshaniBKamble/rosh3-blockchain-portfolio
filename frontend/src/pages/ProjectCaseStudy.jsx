@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, FolderGit2, MonitorX } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, FolderGit2, MonitorX } from "lucide-react";
 import Seo from "@/components/Seo";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -111,20 +111,44 @@ export default function ProjectCaseStudy() {
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <span
-                  data-testid="case-study-github-soon"
-                  className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-line/70 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-600"
-                  title="Repository link will be published soon"
-                >
-                  <FolderGit2 className="h-3.5 w-3.5" /> GITHUB — COMING SOON
-                </span>
-                <span
-                  data-testid="case-study-demo-soon"
-                  className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-line/70 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-600"
-                  title="Live demo will be published after deployment"
-                >
-                  <MonitorX className="h-3.5 w-3.5" /> DEMO COMING SOON
-                </span>
+                {project.github ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="case-study-github-link"
+                    className="inline-flex items-center gap-2 rounded-md border border-line bg-obsidian/60 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-300 transition-all duration-300 hover:border-cyan-500/50 hover:text-cyan-300"
+                  >
+                    <FolderGit2 className="h-3.5 w-3.5" /> GITHUB REPOSITORY
+                  </a>
+                ) : (
+                  <span
+                    data-testid="case-study-github-soon"
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-line/70 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-600"
+                    title="Repository link will be published soon"
+                  >
+                    <FolderGit2 className="h-3.5 w-3.5" /> GITHUB — COMING SOON
+                  </span>
+                )}
+                {project.demo ? (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="case-study-demo-link"
+                    className="inline-flex items-center gap-2 rounded-md border border-line bg-obsidian/60 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-emerald-300 transition-all duration-300 hover:border-emerald-500/50"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" /> LIVE DEMO
+                  </a>
+                ) : (
+                  <span
+                    data-testid="case-study-demo-soon"
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-line/70 px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-zinc-600"
+                    title="Live demo will be published after deployment"
+                  >
+                    <MonitorX className="h-3.5 w-3.5" /> DEMO COMING SOON
+                  </span>
+                )}
               </div>
             </header>
           </Reveal>
