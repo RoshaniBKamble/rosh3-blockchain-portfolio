@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 222 47% 3%;
+        --foreground: 210 40% 98%;
+        --card: 222 33% 6%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222 33% 6%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 258 90% 66%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 221 28% 11%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 221 28% 11%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 221 28% 11%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62% 50%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 220 26% 14%;
+        --input: 220 26% 14%;
+        --ring: 258 90% 66%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-padding-top: 5rem;
+    }
+    body {
+        @apply bg-void font-sans text-slate-100 antialiased;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: rgba(139, 92, 246, 0.4);
+        color: #ffffff;
+    }
+    :focus-visible {
+        outline: 2px solid #8b5cf6;
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #050608;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #1e2638;
+        border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #2e3a52;
+    }
+}
+
+@layer utilities {
+    .bg-grid {
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 44px 44px;
+    }
+    .glass {
+        @apply border border-line/80 bg-obsidian/80 backdrop-blur-xl;
+    }
+    .text-gradient {
+        @apply bg-gradient-to-r from-violet-400 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent;
+    }
+    .mono-label {
+        @apply font-mono text-xs uppercase tracking-[0.25em];
+    }
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee-scroll 42s linear infinite;
+}
+
+@keyframes node-ping {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    80%,
+    100% {
+        transform: scale(2.6);
+        opacity: 0;
+    }
+}
+
+.animate-node-ping {
+    animation: node-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-node-ping {
+        animation: none;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

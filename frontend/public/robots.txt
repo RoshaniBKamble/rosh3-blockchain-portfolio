@@ -1,0 +1,3 @@
+# Allow all crawlers, including AI/answer engines.
+User-agent: *
+Allow: /

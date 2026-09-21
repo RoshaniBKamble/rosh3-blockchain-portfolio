@@ -1,0 +1,14 @@
+# Roshani Kamble — Blockchain & Web3 Developer
+
+Personal engineering portfolio of Roshani Kamble, a Blockchain & Web3 developer based in Pune, Maharashtra, India.
+
+## What this site offers
+- Featured Web3 engineering projects: ChainSentinel (smart-contract security analysis), ChainEscrow (milestone escrow dApp), LendGuard (educational DeFi lending protocol), VerifiChain (blockchain credential verification)
+- Detailed case studies covering architecture, on-chain/off-chain design, testing, security and limitations
+- Technical stack across Solidity, Ethereum, EVM, React, TypeScript, Ethers.js, Foundry and Hardhat
+- Education, achievement and direct contact details
+
+## Contact
+- Email: roshanikamble2002@gmail.com
+- GitHub: https://github.com/RoshaniBKamble
+- LinkedIn: https://www.linkedin.com/in/roshani-kamble-3a8b7b259
