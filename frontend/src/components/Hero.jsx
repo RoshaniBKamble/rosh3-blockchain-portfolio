@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import { heroBadges, site, statusFocus } from "@/data/site";
 import { scrollToId } from "@/lib/scroll";
 import { NetworkVisual } from "@/components/NetworkVisual";
@@ -133,6 +133,15 @@ export const Hero = () => {
             >
               <Linkedin className="h-4 w-4" />
               CONNECT ON LINKEDIN
+            </a>
+            <a
+              data-testid="hero-cta-resume"
+              href="/Roshani-Kamble-Resume.pdf"
+              download="Roshani-Kamble-Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-md border border-line bg-obsidian/60 px-6 py-3.5 font-mono text-xs tracking-[0.18em] text-zinc-300 transition-all duration-300 hover:border-emerald-500/50 hover:text-emerald-300"
+            >
+              <Download className="h-4 w-4" />
+              DOWNLOAD RESUME
             </a>
           </motion.div>
 

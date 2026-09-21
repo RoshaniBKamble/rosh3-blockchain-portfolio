@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { navLinks, site } from "@/data/site";
 import { scrollToId } from "@/lib/scroll";
 
@@ -67,7 +67,16 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="/Roshani-Kamble-Resume.pdf"
+            download="Roshani-Kamble-Resume.pdf"
+            data-testid="nav-resume-download"
+            className="inline-flex items-center gap-2 rounded-md border border-line bg-obsidian/60 px-4 py-2 font-mono text-[11px] tracking-[0.2em] text-zinc-300 transition-all duration-300 hover:border-cyan-500/50 hover:text-cyan-300"
+          >
+            <Download className="h-3.5 w-3.5" />
+            RESUME
+          </a>
           <button
             type="button"
             data-testid="nav-cta-talk"
@@ -113,6 +122,17 @@ export const Navbar = () => {
                   </button>
                 </li>
               ))}
+              <li className="border-t border-line/60 pt-2">
+                <a
+                  href="/Roshani-Kamble-Resume.pdf"
+                  download="Roshani-Kamble-Resume.pdf"
+                  data-testid="mobile-nav-resume-download"
+                  className="flex items-center gap-2.5 rounded-md px-3 py-3 font-mono text-xs tracking-[0.2em] text-cyan-300 transition-colors hover:bg-charcoal"
+                >
+                  <Download className="h-4 w-4" />
+                  DOWNLOAD RESUME
+                </a>
+              </li>
             </ul>
           </motion.div>
         ) : null}
