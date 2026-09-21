@@ -2,6 +2,9 @@ export const projects = [
   {
     slug: "chainsentinel",
     num: "01",
+    github: null,
+    demo: null,
+    deployment: null,
     title: "ChainSentinel",
     subtitle: "Smart Contract Security & Vulnerability Analysis Platform",
     description:
@@ -51,6 +54,9 @@ export const projects = [
   {
     slug: "chainescrow",
     num: "02",
+    github: null,
+    demo: null,
+    deployment: null,
     title: "ChainEscrow",
     subtitle: "Decentralized Milestone Escrow & Dispute Resolution dApp",
     description:
@@ -102,6 +108,9 @@ export const projects = [
   {
     slug: "lendguard",
     num: "03",
+    github: null,
+    demo: null,
+    deployment: null,
     title: "LendGuard",
     subtitle: "DeFi Lending & Collateral Risk Protocol",
     description:
@@ -153,6 +162,9 @@ export const projects = [
   {
     slug: "verifichain",
     num: "04",
+    github: null,
+    demo: null,
+    deployment: null,
     title: "VerifiChain",
     subtitle: "Blockchain Credential & Document Verification Platform",
     description:

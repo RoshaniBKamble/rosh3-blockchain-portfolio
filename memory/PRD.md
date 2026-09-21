@@ -32,6 +32,8 @@ Build a premium, production-quality Web3/Blockchain developer portfolio for **Ro
 
 - Resume Download (2026-09-21): user's actual uploaded resume PDF served at `/Roshani-Kamble-Resume.pdf`; ghost-style secondary "RESUME" button in navbar (desktop + mobile drawer) and "DOWNLOAD RESUME" ghost CTA in hero; verified real download with correct filename
 
+- Activation-ready structure (2026-09-21): every project in `src/data/projects.js` carries explicit `github: null`, `demo: null`, `deployment: null` fields. Setting `github` to a real URL swaps the card + case-study COMING SOON chip for a live GITHUB button; setting `demo` adds a LIVE DEMO button; setting `deployment: { network, address, explorer }` renders the Network / Contract Address / Explorer rows in the case-study DEPLOYMENT block. Until then: GitHub COMING SOON, demo unavailable, contract info hidden (only "will be added after deployment" note). No redesign needed to activate.
+
 ## Verified
 - Desktop hero/mid/projects/contact screenshots, case-study page, mobile 390px (no horizontal overflow, drawer works), zero app console errors
 

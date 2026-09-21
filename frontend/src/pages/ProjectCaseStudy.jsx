@@ -241,16 +241,38 @@ export default function ProjectCaseStudy() {
             </div>
 
             <Block label="DEPLOYMENT" title="Network & contract status" testId="cs-deployment">
-              <div className="rounded-md border border-line/70 bg-charcoal/50 p-4">
-                <div className="flex items-center justify-between border-b border-line/60 pb-3 font-mono text-[11px]">
-                  <span className="text-zinc-500">NETWORK</span>
-                  <span className="tracking-[0.15em] text-cyan-300">ETHEREUM SEPOLIA (TESTNET)</span>
+              {project.deployment ? (
+                <div className="rounded-md border border-line/70 bg-charcoal/50 p-4">
+                  <div className="flex items-center justify-between border-b border-line/60 pb-3 font-mono text-[11px]">
+                    <span className="text-zinc-500">NETWORK</span>
+                    <span className="tracking-[0.15em] text-cyan-300" data-testid="cs-network">
+                      {project.deployment.network}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4 border-b border-line/60 py-3 font-mono text-[11px]">
+                    <span className="shrink-0 text-zinc-500">CONTRACT ADDRESS</span>
+                    <span className="break-all text-right tracking-wider text-zinc-200" data-testid="cs-contract-address">
+                      {project.deployment.address}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between pt-3 font-mono text-[11px]">
+                    <span className="text-zinc-500">EXPLORER</span>
+                    <a
+                      href={project.deployment.explorer}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid="cs-explorer-link"
+                      className="inline-flex items-center gap-1.5 tracking-[0.15em] text-emerald-300 transition-colors hover:text-emerald-200"
+                    >
+                      VIEW ON EXPLORER <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </div>
                 </div>
-                <p className="mt-3 text-sm text-zinc-400">
-                  Testnet deployment information — contract address and block-explorer link — will be added after
-                  deployment.
+              ) : (
+                <p className="text-sm text-zinc-500">
+                  Testnet deployment information will be added after deployment.
                 </p>
-              </div>
+              )}
             </Block>
 
             <div className="grid gap-5 lg:grid-cols-2">
