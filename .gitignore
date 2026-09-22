@@ -86,6 +86,17 @@ android-sdk/
 .env
 .env.*
 *.env
+!.env.example
 credentials.json
 *.key
 .credentials
+
+# Emergent platform / internal development files (workspace-only, not for public repo)
+/.emergent/
+/.gitconfig
+/memory/
+/test_reports/
+/test_result.md
+/design_guidelines.json
+/.ruff_cache/
+/tests/
